@@ -1,4 +1,4 @@
-# Cristalix Arcade API DOCS (актуальная версия 1.0.22)
+# Cristalix Arcade API DOCS (актуальная версия 1.0.23)
 
 Это система объединяющая все аркады на Cristalix. 
 Проект тянет за собой Animation API, и сам включает его, поэтому вам не нужно добавлять его отдельно.
@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'me.func:arcade-api:1.0.22'
+  implementation 'me.func:arcade-api:1.0.23'
   implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.0'
 }
 ```
@@ -53,6 +53,9 @@ dependencies {
 
 `Arcade.getDonate(uuid: UUID): ArcadePlayer` получить весь донат игрока по UUID<br>
 `Arcade.getDonate(player: Player): ArcadePlayer` получить весь донат игрока<br>
+
+`SkullManager.create(URL: String?): ItemStack` возвращает вам голову игрока со скином указанным по URL<br>
+`Firework.generate(location: Location, vararg colors: Color)` создает фейрверки нужных цветов на указанной локации<br>
 
 <h3>Весь донат</h3>
 
