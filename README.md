@@ -49,6 +49,19 @@ dependencies {
 <br>
 `Arcade.updatePrefix(uuid: UUID, prefix: String)` обновить мультисерверный префикс <br>
 
+
+<h3>Музыка</h3>
+
+`Music.EXPLOSION.sound(vararg player: Player)` проигрывание звука взрыва<br>
+`Music.RARE_ITEM.sound(vararg player: Player)` звук редкого предмета<br>
+`Music.LEVEL_UP.sound(vararg player: Player)` звук улучшения уровня<br>
+`Music.LEVEL_UP2.sound(vararg player: Player)` второй звук улучшения уровня<br>
+`Music.BONUS.sound(vararg player: Player)` звук поднятия бонуса<br>
+`Music.BONUS2.sound(vararg player: Player)` другой звук поднятия бонуса<br>
+
+`Music.sound(source: String, vararg player: Player)` проигрывание звука по прямой ссылке на звук<br>
+`Music.stop(vararg player: Player)` прекращение проигрывание звука<br>
+
 <h3>Дополнительное</h3>
 
 `Arcade.getDonate(uuid: UUID): ArcadePlayer` получить весь донат игрока по UUID<br>
