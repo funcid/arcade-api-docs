@@ -1,4 +1,4 @@
-# Cristalix Arcade API DOCS (актуальная версия 1.0.23)
+# Cristalix Arcade API DOCS (актуальная версия 1.0.28)
 
 Это система объединяющая все аркады на Cristalix. 
 Проект тянет за собой Animation API, и сам включает его, поэтому вам не нужно добавлять его отдельно.
@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'me.func:arcade-api:1.0.23'
+  implementation 'me.func:arcade-api:1.0.28'
   implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.0'
 }
 ```
@@ -52,13 +52,17 @@ dependencies {
 
 <h3>Музыка</h3>
 
-`Music.EXPLOSION.sound(vararg player: Player)` проигрывание звука взрыва<br>
-`Music.RARE_ITEM.sound(vararg player: Player)` звук редкого предмета<br>
-`Music.LEVEL_UP.sound(vararg player: Player)` звук улучшения уровня<br>
-`Music.LEVEL_UP2.sound(vararg player: Player)` второй звук улучшения уровня<br>
-`Music.BONUS.sound(vararg player: Player)` звук поднятия бонуса<br>
-`Music.BONUS2.sound(vararg player: Player)` другой звук поднятия бонуса<br>
+Готовы звуки:
+```
+EXPLOSION("https://implario.dev/arcade/music/EXPLOSION.mp3"),
+RARE_ITEM("https://implario.dev/arcade/music/RARE_ITEM.mp3"),
+BONUS("https://implario.dev/arcade/music/BONUS.mp3"),
+BONUS2("https://implario.dev/arcade/music/SECOND_BONUS.mp3"),
+LEVEL_UP("https://implario.dev/arcade/music/LEVEL_UP.mp3"),
+LEVEL_UP2("https://implario.dev/arcade/music/SECOND_LEVEL_UP.mp3"),
+```
 
+`Music.МУЗЫКА.sound(vararg player: Player)` включить игрокам готового звука<br>
 `Music.sound(source: String, vararg player: Player)` проигрывание звука по прямой ссылке на звук<br>
 `Music.stop(vararg player: Player)` прекращение проигрывание звука<br>
 
