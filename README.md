@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'me.func:arcade-api:1.0.90'
+  implementation 'me.func:arcade-api:1.0.95'
   implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.0'
 }
 ```
@@ -75,6 +75,9 @@ LEVEL_UP2("https://implario.dev/arcade/music/SECOND_LEVEL_UP.mp3"),
 
 `Arcade.getArcadeData(uuid: UUID): ArcadePlayer` получить весь донат игрока по UUID<br>
 `Arcade.getArcadeData(player: Player): ArcadePlayer` получить весь донат игрока<br>
+
+`Arcade.enableStepParticles()` включить частицы при ходьбе (не работает у `SPECTATOR`)<br>
+`Arcade.enableArrowParticles()` включить частицы стрелы<br>
 
 `SkullManager.create(URL: String?): ItemStack` возвращает вам голову игрока со скином указанным по URL<br>
 `Firework.generate(location: Location, vararg colors: Color)` создает фейрверки нужных цветов на указанной локации<br>
