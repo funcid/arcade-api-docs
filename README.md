@@ -1,4 +1,4 @@
-# Cristalix Arcade API DOCS (актуальная версия 1.0.48)
+# Cristalix Arcade API DOCS
 
 Это система объединяющая все аркады на Cristalix. 
 Проект тянет за собой Animation API, и сам включает его, поэтому вам не нужно добавлять его отдельно.
@@ -21,14 +21,14 @@ repositories {
 }
 
 dependencies {
-  implementation 'me.func:arcade-api:1.0.48'
+  implementation 'me.func:arcade-api:1.0.90'
   implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.0'
 }
 ```
 
 <h2>Важно</h2>
 
-При загрузке плагина нужно один раз вызвать (если вы используете games5e укажите в скобках реалм) `Arcade.start()`<br>
+При загрузке плагина нужно один раз вызвать (если вы используете games5e укажите в скобках реалм, для подключения к система BattlePass, укажите через запятую `ArcadeType` вашего режима) `Arcade.start()`<br>
 При завершении игры или при кике всех игроков нужно вызвать `Arcade.bulkSave(vararg players: Player)` чтобы сделать сохранение игроков в одном запросе, а не в отдельных
 
 <h2>Методы</h2>
@@ -49,6 +49,11 @@ dependencies {
 <br>
 `Arcade.updatePrefix(uuid: UUID, prefix: String)` обновить мультисерверный префикс <br>
 
+<h3>Работа с BattlePass</h3> 
+
+Квесты игрока случайно генерируются каждые N часов из определенного списка, чтобы обновлять прогресс игрока используйте `BattlePassUtil.update(player, questType, value, absolute)`, player - игрок, questType `KILL, WIN, PLAY, TIME, POINTS, BREAK, PLACE, DAMAGE`, value - если absolute, то число прогресс заменится на это значение, иначе просто добавится.<br>
+Пример:
+При убийстве игрока - `BattlePassUtil.update(damager, KILL, 1, false)`, если у игрока есть данный квест, то ему добавится одно убийство.
 
 <h3>Музыка</h3>
 
@@ -68,8 +73,8 @@ LEVEL_UP2("https://implario.dev/arcade/music/SECOND_LEVEL_UP.mp3"),
 
 <h3>Дополнительное</h3>
 
-`Arcade.getDonate(uuid: UUID): ArcadePlayer` получить весь донат игрока по UUID<br>
-`Arcade.getDonate(player: Player): ArcadePlayer` получить весь донат игрока<br>
+`Arcade.getArcadeData(uuid: UUID): ArcadePlayer` получить весь донат игрока по UUID<br>
+`Arcade.getArcadeData(player: Player): ArcadePlayer` получить весь донат игрока<br>
 
 `SkullManager.create(URL: String?): ItemStack` возвращает вам голову игрока со скином указанным по URL<br>
 `Firework.generate(location: Location, vararg colors: Color)` создает фейрверки нужных цветов на указанной локации<br>
